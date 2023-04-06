@@ -23,10 +23,15 @@ fun HomeScreen(
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
-    ){
+    ) {
         Text(
             modifier = Modifier.clickable {
-                navController.navigate(route = Screen.Detail.passId(5))
+                navController.navigate(
+                    route = Screen.Detail.passNameAndId(
+                        id = 10,
+                        name = "Stevdza-San"
+                    )
+                )
             },
             text = "Home",
             color = Color.White,
