@@ -14,12 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.navigationusedinjetpackcompose.android.screen.Screen
-import com.example.navigationusedinjetpackcompose.android.screen.Screen.Detail
 
 @Composable
-fun HomeScreen(
-    navController: NavController
-) {
+fun LogInScreen(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -27,26 +24,35 @@ fun HomeScreen(
     ) {
         Text(
             modifier = Modifier.clickable {
-                navController.navigate(Detail.route)
+                 navController.navigate(Screen.SignUp.route)
             },
-            text = "Home",
-            color = Color.White,
+            text = "Login",
+            color = Color.Cyan,
             fontSize = MaterialTheme.typography.h3.fontSize,
             fontWeight = FontWeight.Bold
         )
         Text(
             modifier = Modifier
                 .padding(top = 150.dp)
-                .clickable { navController.navigate(Screen.LogIn.route)},
-            text = "Login/SignUp",
+                .clickable {navController.navigate(Screen.SignUp.route)},
+            text = "Sign-Up",
             color = Color.Blue,
             fontWeight = FontWeight.Medium
         )
+        Text(
+            modifier = Modifier
+                .padding(top = 150.dp)
+                .clickable {navController.navigate(Screen.Home.route)},
+            text = "Go Back",
+            color = Color.Blue,
+            fontWeight = FontWeight.Medium
+        )
+
     }
 }
 
 @Composable
 @Preview(showBackground = true)
-fun HomeScreenPreview() {
-    HomeScreen(navController = rememberNavController())
+fun LogInScreenPreview() {
+    LogInScreen(navController = rememberNavController())
 }

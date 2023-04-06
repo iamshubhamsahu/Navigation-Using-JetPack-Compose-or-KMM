@@ -1,7 +1,9 @@
 package com.example.navigationusedinjetpackcompose.android.view
 
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -14,31 +16,27 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.navigationusedinjetpackcompose.android.screen.Screen
-import com.example.navigationusedinjetpackcompose.android.screen.Screen.Detail
 
 @Composable
-fun HomeScreen(
-    navController: NavController
-) {
-    Column(
+fun SignUpScreen(navController: NavController) {
+    Box(
         modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
+        contentAlignment = Alignment.Center
+    ){
         Text(
             modifier = Modifier.clickable {
-                navController.navigate(Detail.route)
+                // navController.navigate(Screen.Field.route)
             },
-            text = "Home",
-            color = Color.White,
+            text = "Sign-Up",
+            color = Color.Cyan,
             fontSize = MaterialTheme.typography.h3.fontSize,
             fontWeight = FontWeight.Bold
         )
         Text(
             modifier = Modifier
                 .padding(top = 150.dp)
-                .clickable { navController.navigate(Screen.LogIn.route)},
-            text = "Login/SignUp",
+                .clickable {navController.navigate(Screen.LogIn.route)},
+            text = "LogIn",
             color = Color.Blue,
             fontWeight = FontWeight.Medium
         )
@@ -47,6 +45,6 @@ fun HomeScreen(
 
 @Composable
 @Preview(showBackground = true)
-fun HomeScreenPreview() {
-    HomeScreen(navController = rememberNavController())
+fun SignUpScreenPreview(){
+    SignUpScreen(navController = rememberNavController())
 }

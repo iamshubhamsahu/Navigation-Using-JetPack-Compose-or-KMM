@@ -8,7 +8,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.navigationusedinjetpackcompose.android.screen.SetUpNavGraph
+import com.example.navigationusedinjetpackcompose.android.screen.nav_graph.SetUpNavGraph
 
 class MainActivity : ComponentActivity() {
 
