@@ -26,7 +26,7 @@ fun HomeScreen(
     ){
         Text(
             modifier = Modifier.clickable {
-                navController.navigate(Screen.Detail.route)
+                navController.navigate(route = Screen.Detail.passId(5))
             },
             text = "Home",
             color = Color.White,
