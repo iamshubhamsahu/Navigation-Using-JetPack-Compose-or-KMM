@@ -27,7 +27,10 @@ fun HomeScreen(
         Text(
             modifier = Modifier.clickable {
                 navController.navigate(
-                    route = "detail_screen?id={id}"
+                    route = Screen.Detail.passNameAndid(
+                        id = 11,
+                        name = "Bhai Hai Tmhara"
+                    )
                 )
             },
             text = "Home",
